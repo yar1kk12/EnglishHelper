@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Centered Heading -->
+    <div class="container mt-5 text-center">
+        <h2>Phrasal Verbs</h2>
+    </div>
+
+    <!-- Centered Table with Three Columns -->
+{#    <div class="container mt-3">#}
+{#        <div class="row justify-content-center">#}
+{#            <div class="col-md-12"> <!-- Increased column width for an even larger table -->#}
+{#                <table class="table table-bordered table-striped table-hover" style="font-size: 20px;"> <!-- Increased font size -->#}
+{#                    <thead class="thead-dark">#}
+{#                        <tr>#}
+{#                            <th scope="col">Phrasal Verb</th>#}
+{#                            <th scope="col">Translation</th>#}
+{#                            <th scope="col">Example</th>#}
+{#                        </tr>#}
+{#                    </thead>#}
+{#                    <tbody>#}
+{#                        {% for el in verbs_check %}#}
+{#                        <tr>#}
+{#                            <td>{{el.phrasal_verb}}</td>#}
+{#                            <td>{{el.translation}}</td>#}
+{#                            <td>{{el.example}}</td>#}
+{#                        </tr>#}
+{#                        {% endfor %}#}
+{#                    </tbody>#}
+{#                </table>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+
+
+{% for start, objects in verbs_dict.items %}
+    <h1>{{ start }}</h1>
+    {% for verb in objects %}
+        <p>{{ verb }}</p>
+    {% endfor %}
+
+
+
+
+{% endfor %}
+
+
+{% endblock %}

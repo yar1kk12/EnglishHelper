@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Light Template</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+        }
+
+        .navbar-brand img {
+            max-height: 40px;
+        }
+
+        .nav-link {
+            padding: 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            margin: 5px;
+            color: #495057;
+        }
+
+        .nav-link:hover {
+            background-color: #e2e6ea;
+        }
+
+        .square-plate {
+            height: 150px; /* Adjusted height to be 3 times taller */
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .square-plate-1 {
+            background-color: #007bff; /* Different background color for the first square plate */
+        }
+
+        .square-plate-2 {
+            background-color: #28a745; /* Different background color for the second square plate */
+        }
+
+        .square-plate-3 {
+            background-color: #ffc107; /* Different background color for the third square plate */
+        }
+
+        .square-plate-4 {
+            background-color: #dc3545; /* Different background color for the fourth square plate */
+        }
+
+        .btn-square-plate {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">
+            <img src="your-logo.png" alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href={% url 'home' %}>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container mt-4">
+        <h1>Welcome to our website</h1>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="square-plate square-plate-1">
+                    <a href="{% url 'src:phrasalverbs_list' %}" class="btn btn-light btn-square-plate">Link 1</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="square-plate square-plate-2">
+                    <a href="#" class="btn btn-light btn-square-plate">Link 2</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="square-plate square-plate-3">
+                    <a href="#" class="btn btn-light btn-square-plate">Link 3</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="square-plate square-plate-4">
+                    <a href="#" class="btn btn-light btn-square-plate">Link 4</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

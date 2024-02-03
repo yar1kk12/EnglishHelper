@@ -1,47 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
     <!-- Centered Heading -->
-    <div class="container mt-5 text-center">
-        <h2>Phrasal Verbs</h2>
+    <div class="container mt-5 text-center" >
+        <h1 margin-bottom = "20px">Phrasal Verbs</h1>
     </div>
 
-    <!-- Centered Table with Three Columns -->
-{#    <div class="container mt-3">#}
-{#        <div class="row justify-content-center">#}
-{#            <div class="col-md-12"> <!-- Increased column width for an even larger table -->#}
-{#                <table class="table table-bordered table-striped table-hover" style="font-size: 20px;"> <!-- Increased font size -->#}
-{#                    <thead class="thead-dark">#}
-{#                        <tr>#}
-{#                            <th scope="col">Phrasal Verb</th>#}
-{#                            <th scope="col">Translation</th>#}
-{#                            <th scope="col">Example</th>#}
-{#                        </tr>#}
-{#                    </thead>#}
-{#                    <tbody>#}
-{#                        {% for el in verbs_check %}#}
-{#                        <tr>#}
-{#                            <td>{{el.phrasal_verb}}</td>#}
-{#                            <td>{{el.translation}}</td>#}
-{#                            <td>{{el.example}}</td>#}
-{#                        </tr>#}
-{#                        {% endfor %}#}
-{#                    </tbody>#}
-{#                </table>#}
-{#            </div>#}
-{#        </div>#}
-{#    </div>#}
-
-
-{% for start, objects in verbs_dict.items %}
-    <h1>{{ start }}</h1>
+<div class="pv">
+  {% for start, objects in verbs_dict.items %}
+    <h3 style="font-weight: 700; margin-top: 50px; ">{{ start.capitalize }}</h3>
     {% for verb in objects %}
-        <p>{{ verb }}</p>
+      <div margin-top='2110px' display='inline-block' class="card" style="width: 100%; margin-bottom: 20px;">
+        <img src="" class="card-img-top" alt="">
+        <div class="card-body">
+          <h3 class="card-title">{{ verb.phrasal_verb}}</h3>
+          <p class="card-text">{{verb.description}}</p>
+            <p  style="font-size: 1.2rem; text-align: right; font-family: 'Muller Medium Italic'" class="card-text">{{verb.example}}</p>
+        </div>
+      </div>
     {% endfor %}
 
-
-
-
 {% endfor %}
+</div>
 
 
 {% endblock %}
+

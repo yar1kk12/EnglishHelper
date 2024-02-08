@@ -14,7 +14,7 @@ class PhrasalVerbsView(ListView):
         context = super().get_context_data(**kwargs)
         data = {}
 
-        for start in self.group_by:
+        for start in sorted(self.group_by):
             queryset = PhrasalVerbs.objects.filter(phrasal_verb__istartswith=start)
             data[start] = queryset
 

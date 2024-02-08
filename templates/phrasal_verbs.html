@@ -6,20 +6,28 @@
     </div>
 
 <div class="pv">
-  {% for start, objects in verbs_dict.items %}
-    <h3 style="font-weight: 700; margin-top: 50px; ">{{ start.capitalize }}</h3>
-    {% for verb in objects %}
-      <div margin-top='2110px' display='inline-block' class="card" style="width: 100%; margin-bottom: 20px;">
-        <img src="" class="card-img-top" alt="">
-        <div class="card-body">
-          <h3 class="card-title">{{verb.phrasal_verb}}</h3>
-          <p class="card-text">{{verb.description}}</p>
-          <p style="font-size: 1.2rem; text-align: right; font-family: 'Muller Medium Italic'" class="card-text">{{verb.example}}</p>
+    <form method="get">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search" name="search"
+                   value="{{ request.GET.search }}">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Filter</button>
+            </div>
         </div>
-      </div>
+    </form>
+{% if search %}
+    {% for verb in search %}
+      {% include 'card_template.html' with verb=verb %}
     {% endfor %}
+{% endif %}
 
+{% for start, objects in verbs_dict.items %}
+  <h3 style="font-weight: 700; margin-top: 50px;">{{ start.capitalize }}</h3>
+  {% for verb in objects %}
+    {% include 'card_template.html' with verb=verb %}
+  {% endfor %}
 {% endfor %}
+
 </div>
 
 
